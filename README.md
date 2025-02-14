@@ -1,17 +1,18 @@
-**Hello, welcome to my website**
+# Welcome to My Website 👋
 
-## General description
+This website serves as a central hub for connecting with me and scheduling appointments. 
 
-The website consists of three main parts:
+## Features
 
-* My monitoring project
-* An appointment calendar where users can select a date and time for an appointment
-* A contact page where users can find me on social networks
+* **GitHub Sponsors:** Support my work.
+* **Appointment Scheduling:** Easily book a time slot that works for you.
+* **Contact & Socials:** Find me on various social media platforms.
 
-## Actual state
+## Status
 
-On pause for two quarters (current date 08-09-23)
+This project is currently **on hold indefinitely** while I focus on other priorities. 
+I'll post an update [here](https://github.com/samucodesh/samucodesh.github.io/discussions) when development resumes.
 
 ## Changelog
 
-you can check the changelog on [the wiki](https://github.com/samucodesh/samucodesh.github.io/wiki)
+For a detailed history of changes, please refer to the [project releases](https://github.com/samucodesh/samucodesh.github.io/releases). 
