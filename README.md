@@ -11,8 +11,8 @@ This website serves as a central hub for connecting with me and scheduling appoi
 ## Status
 
 This project is currently **on hold indefinitely** while I focus on other priorities. 
-I'll post an update [here](https://github.com/samucodesh/samucodesh.github.io/discussions) when development resumes.
+I'll post an update [here](https://github.com/samucodesh/website/discussions) when development resumes.
 
 ## Changelog
 
-For a detailed history of changes, please refer to the [project releases](https://github.com/samucodesh/samucodesh.github.io/releases). 
+For a detailed history of changes, please refer to the [project releases](https://github.com/samucodesh/website/releases). 
