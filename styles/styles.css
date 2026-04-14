@@ -146,3 +146,7 @@ nav a:hover {
 .social-links a:hover {
     color: var(--accent);
 }
+
+.contact-wrapper {
+    text-align: center;
+}
