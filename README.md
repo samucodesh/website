@@ -4,7 +4,7 @@ This website serves as a central hub for connecting with me and scheduling appoi
 
 ## Features
 
-* **GitHub Sponsors:** Support my work.
+* **Professional Services:** Custom software development, architecture, and consulting.
 * **Appointment Scheduling:** Easily book a time slot that works for you.
 * **Contact & Socials:** Find me on various social media platforms.
 
