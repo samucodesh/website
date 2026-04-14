@@ -1,74 +1,148 @@
 /* 
-* Set up root-level styles using CSS variables for easy customization and theme switching.
-* color-scheme: Allows the browser to apply user-preferred color schemes (light/dark mode).
+* Global variables and theme configuration (light-dark).
 */
 :root {
-    color-scheme: light dark; 
-     /* Light background color #f0f6fc */
-     --bg-color-l: #f0f6fc;
-    /* Dark background color #0d1117 */
-    --bg-color-d: #0d1117;
-    /* Light text color #1f2328 */
-    --highligth-color-l: #1f2328;
-    /* Dark text color #f0f6fc */
-    --highligth-color-d: #f0f6fc;
-    /* Small font size */
-    --sm: 3rem; 
-    /* Large font size */ 
-    --lg: 6rem;  
+    color-scheme: light dark;
+    /* Base colors and accents */
+    --bg-color-l: #f0f6fc;
+    --bg-color-d: #0a0a0a;
+    --text-l: #1f2328;
+    --text-d: #f3f4f6;
+    --accent: #3b82f6;
+    /* Appointment button (variables) */
+    --btn-bg-l: #1e3a8a;
+    /* Dark blue */
+    --btn-bg-d: #04fefe;
+    /* Light blue */
+    --btn-text-l: #f3f4f6;
+    /* Light */
+    --btn-text-d: #0a0a0a;
+    /* Dark */
+    /* Typography and spacing */
+    --font-family: 'Inter', sans-serif;
+    --sm: 1.4rem;
+    --md: 2.8rem;
 }
 
-/* 
-* Apply styles to the <html> element when the viewport width is at least 300px.
- Sets the base font size to 62.5%.  This allows for easier calculation of rem units.  1rem = 10px if the browser's default font size is 16px.
-* --bg-color-l:  Should define the background color for light mode.
-* --bg-color-d:  Should define the background color for dark mode.
-* Uses @media for responsive styling, targeting a minimum width of 300px.
-*/
-html {
-    font-family: sans-serif;
-    font-size: 62.5%;
-    background-color: light-dark(var(--bg-color-l),var(--bg-color-d));
-    @media (min-width:300px) {
-        
+/* Media Query for larger screens */
+@media (min-width: 768px) {
+    :root {
+        --sm: 3rem;
+        --md: 4rem;
     }
 }
-/* 
-Styles the GitHub Sponsors section to center text and use the large font size 
-*/
-.gh-sponsors {
-    text-align: center;
-    font-size: var(--lg);
+
+html {
+    font-family: var(--font-family);
+    font-size: 62.5%;
+    /* 1rem = 10px */
+    background-color: light-dark(var(--bg-color-l), var(--bg-color-d));
+    color: light-dark(var(--text-l), var(--text-d));
+    scroll-behavior: smooth;
 }
 
-/*
-* Style elements with the class 'gcalendar'.
-* Sets font size to the value of the --sm variable (small). 
-*/
-.gcalendar {
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+
+/* Utility classes */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    font-size: var(--md);
+}
+
+.glass-card {
+    background: light-dark(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.03));
+    backdrop-filter: blur(10px);
+    border: 1px solid light-dark(rgba(0, 0, 0, 0.05), rgba(255, 255, 255, 0.05));
+    padding: 3rem;
+    border-radius: 1.6rem;
+    transition: transform 0.3s, border-color 0.3s;
+    text-align: center;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+}
+
+.text-accent {
+    color: var(--accent);
+}
+
+/* Structure */
+header {
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+header .container {
+    display: flex;
+    justify-content: center;
+}
+
+nav {
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+.hero {
+    padding: 10rem 0;
+    text-align: center;
+}
+
+/* Styles for buttons and social links */
+.btn-primary {
+    display: inline-block;
+    padding: 1.5rem 3rem;
+    background-color: light-dark(var(--btn-bg-l), var(--btn-bg-d));
+    color: light-dark(var(--btn-text-l), var(--btn-text-d));
+    text-decoration: none;
+    border-radius: 0.8rem;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    font-size: var(--md);
+}
+
+.hero-actions {
+    background-color: light-dark(var(--btn-bg-l), var(--btn-bg-d));
+}
+
+.btn-primary:hover {
+    background-color: light-dark(var(--btn-bg-d), var(--btn-bg-l));
+    color: light-dark(var(--text-l), var(--text-d));
+    ;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.social-links a {
+    color: inherit;
+    text-decoration: none;
     font-size: var(--sm);
 }
 
-/*
-* Styling for navigation links (<a> elements) within the <nav> element
-* Uses flexbox for vertical alignment of content within the link.
-* Centers the link content both horizontally and vertically.
-* Sets the font size using a CSS variable (--lg)
-* Sets the text color using the light-dark() function for theme support.
---highligth-color-l:  CSS variable for the highlight color in light mode.
---highligth-color-d:  CSS variable for the highlight color in dark mode
-* Styles for navigation links to improve touch usability 
-*/
-nav a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: var(--lg);
-    white-space: nowrap;
-    overflow: hidden;
-    color: light-dark(var(--highligth-color-l),var(--highligth-color-d));
-    /* Enhance touch target size and spacing */
-    padding: 1rem; /* Adds padding all around */
-    margin: 0.5rem;  /* Adds spacing between links */
-    text-decoration: none; /* Removes underline for a cleaner touch target */
+.social-links a:hover {
+    color: var(--accent);
 }
